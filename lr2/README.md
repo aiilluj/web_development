@@ -53,7 +53,7 @@ class Comment(models.Model):
         return f'{self.user_name}: {self.text[:30]}'
 ```
 
-![Задание](screen/1.PNG)
+![Задание](screen/1.png)
 
 
 *(Рисунок 1 – модель Comment)*
@@ -79,7 +79,7 @@ class Comment(models.Model):
 python manage.py makemigrations
 ```
 
-![Задание](screen/2.PNG)
+![Задание](screen/2.png)
 
 
 *(Рисунок 2 – python manage.py makemigrations)*
@@ -90,14 +90,14 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-![Задание](screen/3.PNG)
+![Задание](screen/3.png)
 
 
 *(Рисунок 3 – Результат применения миграции)*
 
 В базе данных появилась таблица `news_comment`:
 
-![Задание](screen/4.PNG)
+![Задание](screen/4.png)
 
 
 *(Рисунок 4 – Таблица news_comment)*
@@ -113,7 +113,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 ```
 
-![Задание](screen/5.PNG)
+![Задание](screen/5.png)
 
 
 *(Рисунок 5 – Файл settings.py)*
@@ -128,7 +128,7 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 
-![Задание](screen/6.PNG)
+![Задание](screen/6.png)
 
 
 *(Рисунок 6 – Файл MySite\urls.py)*
@@ -147,7 +147,7 @@ python manage.py shell
 from news.models import Comment
 ```
 
-![Задание](screen/7.PNG)
+![Задание](screen/7.png)
 
 
 *(Рисунок 7 – Работа с ORM)*
@@ -171,7 +171,7 @@ c2 = Comment.objects.create(
 # ... и другие записи
 ```
 
-![Задание](screen/8.PNG)
+![Задание](screen/8.png)
 
 
 *(Рисунок 8 – Создание записей)*
@@ -208,7 +208,7 @@ Comment.objects.get(pk=1)
 Comment.objects.exclude(is_moderated=False)
 ```
 
-![Задание](screen/9.PNG)
+![Задание](screen/9.png)
 
 
 *(Рисунок 9 – Чтение данных)*
@@ -229,7 +229,7 @@ c.save()
 Comment.objects.filter(is_moderated=True)
 ```
 
-![Задание](screen/10.PNG)
+![Задание](screen/10.png)
 
 
 *(Рисунок 10 – Добавление комментария в список)*
@@ -263,7 +263,7 @@ Comment.objects.filter(rating__lt=3).delete()
 Comment.objects.all()
 ```
 
-![Задание](screen/11.PNG)
+![Задание](screen/11.png)
 
 
 *(Рисунок 11 – Удаление)*
@@ -278,12 +278,12 @@ for c in moderated:
     print(f'{c.user_name} ({c.email}) — {c.rating}/5: {c.text}')
 ```
 
-![Задание](screen/12.PNG)
+![Задание](screen/12.png)
 
 
 *(Рисунок 12 – Результаты)*
 
-![Задание](screen/13.PNG)
+![Задание](screen/13.png)
 
 
 **Ссылка на гитхаб:** https://github.com/aiilluj/web_development.git
